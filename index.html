@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom - Portfolio & Work Samples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a12;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 50%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section {
+            padding: 6rem 0;
+            border-top: 1px solid #1a1a2e;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .sample-card {
+            background: #1a1a2e;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2a2a3e;
+            transition: all 0.3s;
+        }
+        
+        .sample-card:hover {
+            border-color: #0ea5e9;
+            background: #1f1f35;
+        }
+        
+        .sample-header {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+            padding: 1.5rem;
+            border-bottom: 1px solid #2a2a3e;
+        }
+        
+        .sample-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sample-category {
+            font-size: 0.8rem;
+            color: #0ea5e9;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .sample-body {
+            padding: 1.5rem;
+        }
+        
+        .sample-description {
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .sample-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .metric {
+            background: rgba(14, 165, 233, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #0ea5e9;
+        }
+        
+        .metric:nth-child(2n) {
+            border-left-color: #10b981;
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: #606070;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .playbooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .playbook-card {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+            border: 1px solid #2a2a3e;
+        }
+        
+        .playbook-card:nth-child(2) {
+            border-left-color: #10b981;
+        }
+        
+        .playbook-card:nth-child(3) {
+            border-left-color: #fbbf24;
+        }
+        
+        .playbook-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .playbook-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+        
+        .playbook-desc {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        
+        .methodology-section {
+            background: #1a1a2e;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a3e;
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            margin: 0 auto 1rem;
+        }
+        
+        .step-name {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-desc {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #1a1a2e;
+            padding-bottom: 2rem;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: #a0a0a0;
+        }
+        
+        footer {
+            border-top: 1px solid #1a1a2e;
+            padding: 3rem 0;
+            text-align: center;
+            color: #606070;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .sample-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">WISDOM</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>170+ grants. Countless wins.</h1>
+            <p class="hero-subtitle">Portfolio and playbooks from successful grant writing and lead generation campaigns</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Grant writing samples</h2>
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Federal Grant</div>
+                        <div class="sample-title">STEM Education Pipeline</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Full grant strategy and application package for K-12 STEM nonprofit including executive summary, project narrative, evaluation plan, and budget justification.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Deliverables</div>
+                                <div class="metric-value">5</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Turnaround</div>
+                                <div class="metric-value">2 wks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Foundation Grants</div>
+                        <div class="sample-title">25-Funder Pipeline</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Comprehensive funder research, diversified opportunity pipeline, capability statement, and master narrative template for reusable grant framework.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Funders ID'd</div>
+                                <div class="metric-value">25+</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Documents</div>
+                                <div class="metric-value">6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">RFP Response</div>
+                        <div class="sample-title">Government Contracting</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Full RFP positioning strategy with letter of intent, capability statement, management approach, and competitive cost proposal for public sector opportunity.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Win Rate</div>
+                                <div class="metric-value">50%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Contracts</div>
+                                <div class="metric-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Readiness Assessment</div>
+                        <div class="sample-title">Nonprofit Capacity Review</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Comprehensive organizational assessment covering financial stability, operational capacity, gap analysis with strategic recommendations and prioritized action plan.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Assessment</div>
+                                <div class="metric-value">18 pgs</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Recommendations</div>
+                                <div class="metric-value">12</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Q&A Repository</div>
+                        <div class="sample-title">Funder Question Database</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Comprehensive curated Q&A library covering common funder questions across multiple grant opportunities, enabling faster application turnaround with consistent messaging.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Questions</div>
+                                <div class="metric-value">40+</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Time Saved</div>
+                                <div class="metric-value">8 hrs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Strategic Planning</div>
+                        <div class="sample-title">Funding Strategy Workshop</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Customized funding strategy development, revenue diversification planning, and implementation roadmap for sustainable nonprofit growth and mission expansion.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Strategy Pages</div>
+                                <div class="metric-value">20+</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Year Plan</div>
+                                <div class="metric-value">$2M+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Lead generation samples</h2>
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Cold Email</div>
+                        <div class="sample-title">B2B Grant Services</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">5-touch research-backed email sequence targeting nonprofit decision makers with custom personalization, trigger-based messaging, and A/B subject line testing.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Open Rate</div>
+                                <div class="metric-value">44%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Reply Rate</div>
+                                <div class="metric-value">9%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">LinkedIn Outreach</div>
+                        <div class="sample-title">SaaS B2B Campaign</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Targeted Sales Navigator campaign using boolean search, ICP filtering, account-level mapping with connection + warm message + InMail follow-up sequences.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Qualified Leads</div>
+                                <div class="metric-value">320</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Connection Rate</div>
+                                <div class="metric-value">28%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Multi-Channel</div>
+                        <div class="sample-title">Workforce Development</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Combined email + LinkedIn campaign targeting government contracting officers and workforce boards with RFP identification, decision-maker mapping, and capability positioning.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">RFP Engagements</div>
+                                <div class="metric-value">6</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Contracts Won</div>
+                                <div class="metric-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Playbooks & frameworks</h2>
+            <div class="playbooks-grid">
+                <div class="playbook-card">
+                    <div class="playbook-icon">📋</div>
+                    <div class="playbook-title">Grant Writing Strategy</div>
+                    <p class="playbook-desc">Funder research, pipeline building, readiness assessment, narrative development, and budget strategy.</p>
+                </div>
+                
+                <div class="playbook-card">
+                    <div class="playbook-icon">🎯</div>
+                    <div class="playbook-title">Lead Generation Framework</div>
+                    <p class="playbook-desc">Channel selection, prospect qualification, multi-touch outreach, email sequencing, and CRM tracking.</p>
+                </div>
+                
+                <div class="playbook-card">
+                    <div class="playbook-icon">📊</div>
+                    <div class="playbook-title">Proposal & Documents</div>
+                    <p class="playbook-desc">Capability statements, LOIs, RFP responses, case studies, executive summaries, and presentations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">My approach</h2>
+            <div class="methodology-section">
+                <div class="methodology-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-name">Discovery</div>
+                        <div class="step-desc">Understand your goals, market, and constraints</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-name">Research</div>
+                        <div class="step-desc">Identify prospects, funders, and opportunities</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-name">Execution</div>
+                        <div class="step-desc">Create compelling assets and outreach</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-name">Delivery</div>
+                        <div class="step-desc">Hand over clean, ready-to-use work</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">What's your experience with grants?</div>
+                    <div class="faq-answer">170+ successful projects across nonprofits, startups, and government contracting. Federal, foundation, state, and corporate grants.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does a grant project take?</div>
+                    <div class="faq-answer">Typically 2-4 weeks depending on scope. Strategy and research take priority; I'll give you a clear timeline after discovery.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What grants can you help with?</div>
+                    <div class="faq-answer">Federal, foundation, state, corporate grants. I work with nonprofits, healthcare, education, workforce development, and social impact organizations.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How are leads qualified?</div>
+                    <div class="faq-answer">Multi-source research: LinkedIn, industry directories, public records, custom databases. Every lead includes contact info, fit assessment, and niche classification.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you do revisions?</div>
+                    <div class="faq-answer">Yes. Unlimited revisions until you're satisfied. My goal is your success, not just delivery.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Wisdom. Portfolio of work samples. <a href="/" style="color: #0ea5e9; text-decoration: none;">Get started</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
