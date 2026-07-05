@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisdom - Portfolio & Work Samples</title>
+    <title>Wisdom | Lead Generation & Sales Development Specialist</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,8 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0a0a12;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
             color: #e0e0e0;
             line-height: 1.6;
         }
@@ -26,50 +26,175 @@
         
         header {
             padding: 2rem 0;
-            border-bottom: 1px solid #1a1a2e;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 50%, #fbbf24 100%);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: #0ea5e9;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cta-primary {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+            color: #0ea5e9;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+        
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #10b981 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .hero {
-            padding: 6rem 0;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(14, 165, 233, 0.1);
+        }
+        
+        .stat-item {
             text-align: center;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            line-height: 1.2;
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
         }
         
-        .hero-subtitle {
-            font-size: 1.2rem;
+        .stat-label {
             color: #a0a0a0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
         .section {
             padding: 6rem 0;
-            border-top: 1px solid #1a1a2e;
+            border-top: 1px solid rgba(14, 165, 233, 0.05);
         }
         
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 800;
             color: #ffffff;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             text-align: center;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .samples-grid {
@@ -79,47 +204,56 @@
         }
         
         .sample-card {
-            background: #1a1a2e;
-            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #2a2a3e;
-            transition: all 0.3s;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .sample-card:hover {
-            border-color: #0ea5e9;
-            background: #1f1f35;
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
         }
         
         .sample-header {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            padding: 1.5rem;
-            border-bottom: 1px solid #2a2a3e;
-        }
-        
-        .sample-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            padding: 2rem;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.15);
         }
         
         .sample-category {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #0ea5e9;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .sample-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
         }
         
         .sample-body {
-            padding: 1.5rem;
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .sample-description {
             color: #a0a0a0;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
         }
         
         .sample-metrics {
@@ -130,109 +264,149 @@
         
         .metric {
             background: rgba(14, 165, 233, 0.1);
-            padding: 1rem;
-            border-radius: 6px;
+            padding: 1.2rem;
+            border-radius: 8px;
             border-left: 3px solid #0ea5e9;
         }
         
         .metric:nth-child(2n) {
-            border-left-color: #10b981;
+            border-left-color: #06b6d4;
         }
         
         .metric-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #606070;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
         }
         
         .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0ea5e9;
         }
         
-        .playbooks-grid {
+        .competencies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         
-        .playbook-card {
-            background: #1a1a2e;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #0ea5e9;
-            border: 1px solid #2a2a3e;
+        .competency-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            transition: all 0.3s ease;
         }
         
-        .playbook-card:nth-child(2) {
-            border-left-color: #10b981;
+        .competency-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-4px);
         }
         
-        .playbook-card:nth-child(3) {
-            border-left-color: #fbbf24;
-        }
-        
-        .playbook-icon {
-            font-size: 2rem;
+        .competency-icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         
-        .playbook-title {
-            font-size: 1.1rem;
+        .competency-title {
+            font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
         
-        .playbook-desc {
+        .competency-desc {
             color: #a0a0a0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
         
-        .methodology-section {
-            background: #1a1a2e;
-            padding: 3rem;
-            border-radius: 8px;
-            border: 1px solid #2a2a3e;
+        .competency-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         
-        .methodology-grid {
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+            color: #0ea5e9;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
         
-        .step {
+        .process-step {
             text-align: center;
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.5rem;
+            font-weight: 800;
+            font-size: 1.8rem;
             color: white;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
         }
         
         .step-name {
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
         }
         
         .step-desc {
             color: #a0a0a0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tool-item {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-item:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-2px);
+        }
+        
+        .tool-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
         }
         
         .faq-section {
@@ -241,9 +415,9 @@
         }
         
         .faq-item {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #1a1a2e;
-            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
         }
         
         .faq-item:last-child {
@@ -254,15 +428,16 @@
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
         
         .faq-answer {
             color: #a0a0a0;
+            line-height: 1.8;
         }
         
         footer {
-            border-top: 1px solid #1a1a2e;
+            border-top: 1px solid rgba(14, 165, 233, 0.1);
             padding: 3rem 0;
             text-align: center;
             color: #606070;
@@ -271,10 +446,26 @@
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
             
             .sample-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-nav {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                display: none;
+            }
+            
+            .hero-stats {
                 grid-template-columns: 1fr;
             }
         }
@@ -283,155 +474,128 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">WISDOM</div>
+            <div class="header-content">
+                <div class="logo">WISDOM</div>
+                <div class="header-nav">
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#work" class="nav-link">Work</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Hire Me</button>
+                </div>
+            </div>
         </div>
     </header>
     
     <section class="hero">
         <div class="container">
-            <h1>170+ grants. Countless wins.</h1>
-            <p class="hero-subtitle">Portfolio and playbooks from successful grant writing and lead generation campaigns</p>
+            <div class="hero-label">LEAD GENERATION & SALES DEVELOPMENT</div>
+            <h1>I <span class="highlight">FILL PIPELINES</span>,<br>NOT SEATS.</h1>
+            <p class="hero-subtitle">Lead generation specialist with 5+ years of outbound sales experience — cold email sequences, LinkedIn Sales Navigator prospecting, and CRM-driven pipeline building for B2B teams.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">40%+</div>
+                    <div class="stat-label">Average open rate on cold email campaigns</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">300+</div>
+                    <div class="stat-label">Qualified leads generated per month via LinkedIn Sales Navigator</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5 YRS</div>
+                    <div class="stat-label">Building pipelines across nonprofit, SaaS, and B2B services</div>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section class="section">
+    <section class="section" id="skills">
         <div class="container">
-            <h2 class="section-title">Grant writing samples</h2>
-            <div class="samples-grid">
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">Federal Grant</div>
-                        <div class="sample-title">STEM Education Pipeline</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Full grant strategy and application package for K-12 STEM nonprofit including executive summary, project narrative, evaluation plan, and budget justification.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Deliverables</div>
-                                <div class="metric-value">5</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Turnaround</div>
-                                <div class="metric-value">2 wks</div>
-                            </div>
-                        </div>
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">Multi-channel expertise in lead generation, prospecting, and pipeline management</p>
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="competency-icon">🎯</div>
+                    <div class="competency-title">Lead Generation & Prospecting</div>
+                    <p class="competency-desc">Multi-channel prospecting using intent data, ICP filtering, and account-based strategies to surface decision-makers worth reaching.</p>
+                    <div class="competency-tags">
+                        <span class="tag">ICP Definition</span>
+                        <span class="tag">Intent Data</span>
+                        <span class="tag">List Building</span>
                     </div>
                 </div>
                 
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">Foundation Grants</div>
-                        <div class="sample-title">25-Funder Pipeline</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Comprehensive funder research, diversified opportunity pipeline, capability statement, and master narrative template for reusable grant framework.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Funders ID'd</div>
-                                <div class="metric-value">25+</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Documents</div>
-                                <div class="metric-value">6</div>
-                            </div>
-                        </div>
+                <div class="competency-card">
+                    <div class="competency-icon">✉️</div>
+                    <div class="competency-title">Cold Email Campaigns</div>
+                    <p class="competency-desc">Research-backed outreach with hyper-personalized messaging. End-to-end sequence management from copywriting to deliverability optimization.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Sequence Design</span>
+                        <span class="tag">A/B Testing</span>
+                        <span class="tag">Personalization</span>
                     </div>
                 </div>
                 
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">RFP Response</div>
-                        <div class="sample-title">Government Contracting</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Full RFP positioning strategy with letter of intent, capability statement, management approach, and competitive cost proposal for public sector opportunity.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Win Rate</div>
-                                <div class="metric-value">50%</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Contracts</div>
-                                <div class="metric-value">3</div>
-                            </div>
-                        </div>
+                <div class="competency-card">
+                    <div class="competency-icon">🔗</div>
+                    <div class="competency-title">LinkedIn Sales Navigator</div>
+                    <p class="competency-desc">Boolean search mastery, account mapping, lead list exports, and connection-to-conversation frameworks that consistently book meetings.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Boolean Search</span>
+                        <span class="tag">Account Mapping</span>
+                        <span class="tag">Social Selling</span>
                     </div>
                 </div>
                 
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">Readiness Assessment</div>
-                        <div class="sample-title">Nonprofit Capacity Review</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Comprehensive organizational assessment covering financial stability, operational capacity, gap analysis with strategic recommendations and prioritized action plan.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Assessment</div>
-                                <div class="metric-value">18 pgs</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Recommendations</div>
-                                <div class="metric-value">12</div>
-                            </div>
-                        </div>
+                <div class="competency-card">
+                    <div class="competency-icon">⚙️</div>
+                    <div class="competency-title">CRM & Pipeline Management</div>
+                    <p class="competency-desc">Clean data hygiene, activity logging, and pipeline stage management so nothing falls through the cracks.</p>
+                    <div class="competency-tags">
+                        <span class="tag">HubSpot</span>
+                        <span class="tag">Apollo</span>
+                        <span class="tag">Reporting</span>
                     </div>
                 </div>
                 
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">Q&A Repository</div>
-                        <div class="sample-title">Funder Question Database</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Comprehensive curated Q&A library covering common funder questions across multiple grant opportunities, enabling faster application turnaround with consistent messaging.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Questions</div>
-                                <div class="metric-value">40+</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Time Saved</div>
-                                <div class="metric-value">8 hrs</div>
-                            </div>
-                        </div>
+                <div class="competency-card">
+                    <div class="competency-icon">🤖</div>
+                    <div class="competency-title">AI-Augmented Research</div>
+                    <p class="competency-desc">Using Apollo, Hunter.io, and AI tooling to enrich accounts at scale — trigger-based outreach that hits prospects at the right moment.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Apollo.io</span>
+                        <span class="tag">Hunter.io</span>
+                        <span class="tag">Enrichment</span>
                     </div>
                 </div>
                 
-                <div class="sample-card">
-                    <div class="sample-header">
-                        <div class="sample-category">Strategic Planning</div>
-                        <div class="sample-title">Funding Strategy Workshop</div>
-                    </div>
-                    <div class="sample-body">
-                        <p class="sample-description">Customized funding strategy development, revenue diversification planning, and implementation roadmap for sustainable nonprofit growth and mission expansion.</p>
-                        <div class="sample-metrics">
-                            <div class="metric">
-                                <div class="metric-label">Strategy Pages</div>
-                                <div class="metric-value">20+</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Year Plan</div>
-                                <div class="metric-value">$2M+</div>
-                            </div>
-                        </div>
+                <div class="competency-card">
+                    <div class="competency-icon">📞</div>
+                    <div class="competency-title">Qualification & Handoffs</div>
+                    <p class="competency-desc">BANT and MEDDIC-aligned discovery conversations that qualify fast and hand off clean opportunities to Account Executives.</p>
+                    <div class="competency-tags">
+                        <span class="tag">BANT</span>
+                        <span class="tag">Discovery</span>
+                        <span class="tag">Qualification</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="section">
+    <section class="section" id="work">
         <div class="container">
-            <h2 class="section-title">Lead generation samples</h2>
+            <h2 class="section-title">Campaigns That Converted</h2>
+            <p class="section-subtitle">Real results from lead generation and sales development campaigns</p>
             <div class="samples-grid">
                 <div class="sample-card">
                     <div class="sample-header">
-                        <div class="sample-category">Cold Email</div>
-                        <div class="sample-title">B2B Grant Services</div>
+                        <div class="sample-category">Cold Email · B2B Services</div>
+                        <div class="sample-title">5-Touch Sequence for B2B Services</div>
                     </div>
                     <div class="sample-body">
-                        <p class="sample-description">5-touch research-backed email sequence targeting nonprofit decision makers with custom personalization, trigger-based messaging, and A/B subject line testing.</p>
+                        <p class="sample-description">Designed and executed a 5-step cold email sequence targeting decision makers at mid-sized companies. Research-first approach with custom first lines referencing each org's recent activity. Managed in Apollo.io with A/B subject line testing.</p>
                         <div class="sample-metrics">
                             <div class="metric">
                                 <div class="metric-label">Open Rate</div>
@@ -447,11 +611,11 @@
                 
                 <div class="sample-card">
                     <div class="sample-header">
-                        <div class="sample-category">LinkedIn Outreach</div>
-                        <div class="sample-title">SaaS B2B Campaign</div>
+                        <div class="sample-category">LinkedIn Prospecting · SaaS</div>
+                        <div class="sample-title">Sales Navigator Campaign: Decision-Makers</div>
                     </div>
                     <div class="sample-body">
-                        <p class="sample-description">Targeted Sales Navigator campaign using boolean search, ICP filtering, account-level mapping with connection + warm message + InMail follow-up sequences.</p>
+                        <p class="sample-description">Built targeted lead lists using Sales Navigator's persona filters (title, company size, industry, growth signals). Used connection requests + InMail sequences with a content-led warm-up approach. Tracked everything in HubSpot.</p>
                         <div class="sample-metrics">
                             <div class="metric">
                                 <div class="metric-label">Qualified Leads</div>
@@ -467,18 +631,18 @@
                 
                 <div class="sample-card">
                     <div class="sample-header">
-                        <div class="sample-category">Multi-Channel</div>
-                        <div class="sample-title">Workforce Development</div>
+                        <div class="sample-category">Multi-Channel · B2B</div>
+                        <div class="sample-title">Outreach for Enterprise Opportunities</div>
                     </div>
                     <div class="sample-body">
-                        <p class="sample-description">Combined email + LinkedIn campaign targeting government contracting officers and workforce boards with RFP identification, decision-maker mapping, and capability positioning.</p>
+                        <p class="sample-description">Prospected decision makers using both email and LinkedIn. Identified relevant opportunities, built decision-maker maps, and sent tailored outreach sequences that positioned the client as the right fit.</p>
                         <div class="sample-metrics">
                             <div class="metric">
-                                <div class="metric-label">RFP Engagements</div>
+                                <div class="metric-label">Engagements</div>
                                 <div class="metric-value">6</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-label">Contracts Won</div>
+                                <div class="metric-label">Conversions</div>
                                 <div class="metric-value">3</div>
                             </div>
                         </div>
@@ -488,26 +652,33 @@
         </div>
     </section>
     
-    <section class="section">
+    <section class="section" id="process">
         <div class="container">
-            <h2 class="section-title">Playbooks & frameworks</h2>
-            <div class="playbooks-grid">
-                <div class="playbook-card">
-                    <div class="playbook-icon">📋</div>
-                    <div class="playbook-title">Grant Writing Strategy</div>
-                    <p class="playbook-desc">Funder research, pipeline building, readiness assessment, narrative development, and budget strategy.</p>
+            <h2 class="section-title">The Process</h2>
+            <p class="section-subtitle">How I build pipelines that actually convert</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">ICP & Account Research</div>
+                    <div class="step-desc">Define the Ideal Customer Profile, identify target accounts, and map decision-makers using Sales Navigator and Apollo prospecting.</div>
                 </div>
                 
-                <div class="playbook-card">
-                    <div class="playbook-icon">🎯</div>
-                    <div class="playbook-title">Lead Generation Framework</div>
-                    <p class="playbook-desc">Channel selection, prospect qualification, multi-touch outreach, email sequencing, and CRM tracking.</p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">List Build & Enrichment</div>
+                    <div class="step-desc">Source verified contact data — email, phone, LinkedIn — and enrich with firmographic signals, tech stack, and recent trigger events.</div>
                 </div>
                 
-                <div class="playbook-card">
-                    <div class="playbook-icon">📊</div>
-                    <div class="playbook-title">Proposal & Documents</div>
-                    <p class="playbook-desc">Capability statements, LOIs, RFP responses, case studies, executive summaries, and presentations.</p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Outreach Sequencing</div>
+                    <div class="step-desc">Write hyper-personalized multi-touch sequences across email and LinkedIn. A/B test subject lines, CTAs, and messaging angles.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">Qualify & Hand Off</div>
+                    <div class="step-desc">Respond to replies, run brief discovery to qualify intent, update CRM, and hand off SQLs to the Account Executive with full context.</div>
                 </div>
             </div>
         </div>
@@ -515,33 +686,17 @@
     
     <section class="section">
         <div class="container">
-            <h2 class="section-title">My approach</h2>
-            <div class="methodology-section">
-                <div class="methodology-grid">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-name">Discovery</div>
-                        <div class="step-desc">Understand your goals, market, and constraints</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-name">Research</div>
-                        <div class="step-desc">Identify prospects, funders, and opportunities</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-name">Execution</div>
-                        <div class="step-desc">Create compelling assets and outreach</div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-name">Delivery</div>
-                        <div class="step-desc">Hand over clean, ready-to-use work</div>
-                    </div>
-                </div>
+            <h2 class="section-title">Tools I Operate</h2>
+            <p class="section-subtitle">The tech stack that powers lead generation at scale</p>
+            <div class="tools-grid">
+                <div class="tool-item"><div class="tool-name">Apollo.io</div></div>
+                <div class="tool-item"><div class="tool-name">LinkedIn Sales Navigator</div></div>
+                <div class="tool-item"><div class="tool-name">HubSpot</div></div>
+                <div class="tool-item"><div class="tool-name">Hunter.io</div></div>
+                <div class="tool-item"><div class="tool-name">Instantly.ai</div></div>
+                <div class="tool-item"><div class="tool-name">Lemlist</div></div>
+                <div class="tool-item"><div class="tool-name">Snov.io</div></div>
+                <div class="tool-item"><div class="tool-name">Zapier</div></div>
             </div>
         </div>
     </section>
@@ -551,18 +706,18 @@
             <h2 class="section-title">Questions</h2>
             <div class="faq-section">
                 <div class="faq-item">
-                    <div class="faq-question">What's your experience with grants?</div>
-                    <div class="faq-answer">170+ successful projects across nonprofits, startups, and government contracting. Federal, foundation, state, and corporate grants.</div>
+                    <div class="faq-question">What's your experience with lead generation?</div>
+                    <div class="faq-answer">5+ years of hands-on outbound sales and lead generation across nonprofits, SaaS, and B2B services. I've built pipelines for startups, mid-market companies, and enterprise teams.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">How long does a grant project take?</div>
-                    <div class="faq-answer">Typically 2-4 weeks depending on scope. Strategy and research take priority; I'll give you a clear timeline after discovery.</div>
+                    <div class="faq-question">How long does a lead generation campaign take?</div>
+                    <div class="faq-answer">Typically 2-4 weeks depending on scope. List building and research take priority; I'll give you a clear timeline after discovery.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What grants can you help with?</div>
-                    <div class="faq-answer">Federal, foundation, state, corporate grants. I work with nonprofits, healthcare, education, workforce development, and social impact organizations.</div>
+                    <div class="faq-question">What types of leads can you generate?</div>
+                    <div class="faq-answer">B2B decision-makers, C-level executives, department heads, and other high-intent prospects. I work across SaaS, services, nonprofits, and enterprise sectors.</div>
                 </div>
                 
                 <div class="faq-item">
@@ -578,9 +733,23 @@
         </div>
     </section>
     
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Ready to build a pipeline that converts?</p>
+            <div style="text-align: center; padding: 3rem 0;">
+                <p style="color: #a0a0a0; margin-bottom: 2rem; font-size: 1.1rem;">Get in touch and let's discuss your lead generation needs.</p>
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:wisdomvic222@gmail.com" style="padding: 14px 32px; background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); color: white; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(14, 165, 233, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(14, 165, 233, 0.2)'">📧 Email Me</a>
+                    <a href="https://www.linkedin.com/in/wisdom-obinna-540395219/" target="_blank" style="padding: 14px 32px; background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); color: white; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(14, 165, 233, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(14, 165, 233, 0.2)'">🔗 LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <div class="container">
-            <p>&copy; 2026 Wisdom. Portfolio of work samples. <a href="/" style="color: #0ea5e9; text-decoration: none;">Get started</a>.</p>
+            <p>&copy; 2026 Wisdom. Lead Generation & Sales Development Specialist. <a href="/" style="color: #0ea5e9; text-decoration: none;">Back to top</a>.</p>
         </div>
     </footer>
 </body>
