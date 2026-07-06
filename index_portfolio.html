@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom | Lead Generation & Sales Development Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: #0ea5e9;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cta-primary {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+            color: #0ea5e9;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+        
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(14, 165, 233, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .section {
+            padding: 6rem 0;
+            border-top: 1px solid rgba(14, 165, 233, 0.05);
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .sample-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sample-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.15);
+        }
+        
+        .sample-header {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            padding: 2rem;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+        }
+        
+        .sample-category {
+            font-size: 0.75rem;
+            color: #0ea5e9;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .sample-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .sample-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sample-description {
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        .sample-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .metric {
+            background: rgba(14, 165, 233, 0.1);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid #0ea5e9;
+        }
+        
+        .metric:nth-child(2n) {
+            border-left-color: #06b6d4;
+        }
+        
+        .metric-label {
+            font-size: 0.7rem;
+            color: #606070;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0ea5e9;
+        }
+        
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .competency-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .competency-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-4px);
+        }
+        
+        .competency-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .competency-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .competency-desc {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .competency-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+            color: #0ea5e9;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+        }
+        
+        .step-name {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .step-desc {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tool-item {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-item:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-2px);
+        }
+        
+        .tool-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+        
+        .faq-answer {
+            color: #a0a0a0;
+            line-height: 1.8;
+        }
+        
+        footer {
+            border-top: 1px solid rgba(14, 165, 233, 0.1);
+            padding: 3rem 0;
+            text-align: center;
+            color: #606070;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .sample-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-nav {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                display: none;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">WISDOM</div>
+                <div class="header-nav">
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#work" class="nav-link">Work</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Hire Me</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">LEAD GENERATION & SALES DEVELOPMENT</div>
+            <h1>I <span class="highlight">FILL PIPELINES</span>,<br>NOT SEATS.</h1>
+            <p class="hero-subtitle">Lead generation specialist with 5+ years of outbound sales experience — cold email sequences, LinkedIn Sales Navigator prospecting, and CRM-driven pipeline building for B2B teams.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">40%+</div>
+                    <div class="stat-label">Average open rate on cold email campaigns</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">300+</div>
+                    <div class="stat-label">Qualified leads generated per month via LinkedIn Sales Navigator</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5 YRS</div>
+                    <div class="stat-label">Building pipelines across nonprofit, SaaS, and B2B services</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-subtitle">Multi-channel expertise in lead generation, prospecting, and pipeline management</p>
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="competency-icon">🎯</div>
+                    <div class="competency-title">Lead Generation & Prospecting</div>
+                    <p class="competency-desc">Multi-channel prospecting using intent data, ICP filtering, and account-based strategies to surface decision-makers worth reaching for B2B and SaaS companies.</p>
+                    <div class="competency-tags">
+                        <span class="tag">ICP Definition</span>
+                        <span class="tag">Intent Data</span>
+                        <span class="tag">List Building</span>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <div class="competency-icon">✉️</div>
+                    <div class="competency-title">Cold Email Campaigns</div>
+                    <p class="competency-desc">Research-backed outreach with hyper-personalized messaging for B2B and SaaS businesses. End-to-end sequence management from copywriting to deliverability optimization.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Sequence Design</span>
+                        <span class="tag">A/B Testing</span>
+                        <span class="tag">Personalization</span>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <div class="competency-icon">🔗</div>
+                    <div class="competency-title">LinkedIn Sales Navigator</div>
+                    <p class="competency-desc">Boolean search mastery, account mapping, lead list exports, and connection-to-conversation frameworks for B2B and SaaS outreach that consistently book meetings.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Boolean Search</span>
+                        <span class="tag">Account Mapping</span>
+                        <span class="tag">Social Selling</span>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <div class="competency-icon">⚙️</div>
+                    <div class="competency-title">CRM & Pipeline Management</div>
+                    <p class="competency-desc">Clean data hygiene, activity logging, and pipeline stage management so nothing falls through the cracks.</p>
+                    <div class="competency-tags">
+                        <span class="tag">HubSpot</span>
+                        <span class="tag">Apollo</span>
+                        <span class="tag">Reporting</span>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <div class="competency-icon">🤖</div>
+                    <div class="competency-title">AI-Augmented Research</div>
+                    <p class="competency-desc">Using Apollo, Hunter.io, and AI tooling to enrich accounts at scale — trigger-based outreach that hits prospects at the right moment.</p>
+                    <div class="competency-tags">
+                        <span class="tag">Apollo.io</span>
+                        <span class="tag">Hunter.io</span>
+                        <span class="tag">Enrichment</span>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <div class="competency-icon">📞</div>
+                    <div class="competency-title">Qualification & Handoffs</div>
+                    <p class="competency-desc">BANT and MEDDIC-aligned discovery conversations that qualify fast and hand off clean opportunities to Account Executives.</p>
+                    <div class="competency-tags">
+                        <span class="tag">BANT</span>
+                        <span class="tag">Discovery</span>
+                        <span class="tag">Qualification</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="work">
+        <div class="container">
+            <h2 class="section-title">Campaigns That Converted</h2>
+            <p class="section-subtitle">Real results from lead generation and sales development campaigns</p>
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Cold Email · B2B & SaaS</div>
+                        <div class="sample-title">5-Touch Sequence for B2B & SaaS</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Designed and executed a 5-step cold email sequence targeting decision makers at mid-sized companies. Research-first approach with custom first lines referencing each org's recent activity. Managed in Apollo.io with A/B subject line testing.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Open Rate</div>
+                                <div class="metric-value">44%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Reply Rate</div>
+                                <div class="metric-value">9%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">LinkedIn Prospecting · B2B & SaaS</div>
+                        <div class="sample-title">Sales Navigator Campaign: Decision-Makers</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Built targeted lead lists using Sales Navigator's persona filters (title, company size, industry, growth signals). Used connection requests + InMail sequences with a content-led warm-up approach. Tracked everything in HubSpot.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Qualified Leads</div>
+                                <div class="metric-value">320</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Connection Rate</div>
+                                <div class="metric-value">28%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sample-card">
+                    <div class="sample-header">
+                        <div class="sample-category">Multi-Channel · B2B & SaaS</div>
+                        <div class="sample-title">Outreach for Enterprise Opportunities</div>
+                    </div>
+                    <div class="sample-body">
+                        <p class="sample-description">Prospected decision makers using both email and LinkedIn. Identified relevant opportunities, built decision-maker maps, and sent tailored outreach sequences that positioned the client as the right fit.</p>
+                        <div class="sample-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Engagements</div>
+                                <div class="metric-value">6</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Conversions</div>
+                                <div class="metric-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="process">
+        <div class="container">
+            <h2 class="section-title">The Process</h2>
+            <p class="section-subtitle">How I build pipelines that actually convert</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">ICP & Account Research</div>
+                    <div class="step-desc">Define the Ideal Customer Profile for B2B and SaaS companies, identify target accounts, and map decision-makers using Sales Navigator and Apollo prospecting.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">List Build & Enrichment</div>
+                    <div class="step-desc">Source verified contact data — email, phone, LinkedIn — and enrich with firmographic signals, tech stack, and recent trigger events.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Outreach Sequencing</div>
+                    <div class="step-desc">Write hyper-personalized multi-touch sequences across email and LinkedIn. A/B test subject lines, CTAs, and messaging angles.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">Qualify & Hand Off</div>
+                    <div class="step-desc">Respond to replies, run brief discovery to qualify intent, update CRM, and hand off SQLs to the Account Executive with full context.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Tools I Operate</h2>
+            <p class="section-subtitle">The tech stack that powers B2B and SaaS lead generation at scale</p>
+            <div class="tools-grid">
+                <div class="tool-item"><div class="tool-name">Apollo.io</div></div>
+                <div class="tool-item"><div class="tool-name">LinkedIn Sales Navigator</div></div>
+                <div class="tool-item"><div class="tool-name">HubSpot</div></div>
+                <div class="tool-item"><div class="tool-name">Hunter.io</div></div>
+                <div class="tool-item"><div class="tool-name">Instantly.ai</div></div>
+                <div class="tool-item"><div class="tool-name">Lemlist</div></div>
+                <div class="tool-item"><div class="tool-name">Snov.io</div></div>
+                <div class="tool-item"><div class="tool-name">Zapier</div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">What's your experience with lead generation?</div>
+                    <div class="faq-answer">5+ years of hands-on outbound sales and lead generation across nonprofits, SaaS, and B2B services. I've built pipelines for startups, mid-market companies, and enterprise teams.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does a lead generation campaign take?</div>
+                    <div class="faq-answer">Typically 2-4 weeks depending on scope. List building and research take priority; I'll give you a clear timeline after discovery.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What types of leads can you generate?</div>
+                    <div class="faq-answer">B2B and SaaS decision-makers, C-level executives, department heads, and other high-intent prospects. I specialize in B2B and SaaS lead generation across all enterprise sectors.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How are leads qualified?</div>
+                    <div class="faq-answer">Multi-source research: LinkedIn, industry directories, public records, custom databases. Every lead includes contact info, fit assessment, and niche classification.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you do revisions?</div>
+                    <div class="faq-answer">Yes. Unlimited revisions until you're satisfied. My goal is your success, not just delivery.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Ready to build a pipeline that converts?</p>
+            <div style="text-align: center; padding: 3rem 0;">
+                <p style="color: #a0a0a0; margin-bottom: 2rem; font-size: 1.1rem;">Get in touch and let's discuss your lead generation needs.</p>
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:wisdomvic222@gmail.com" style="padding: 14px 32px; background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); color: white; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(14, 165, 233, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(14, 165, 233, 0.2)'">📧 Email Me</a>
+                    <a href="https://www.linkedin.com/in/wisdom-obinna-540395219/" target="_blank" style="padding: 14px 32px; background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); color: white; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(14, 165, 233, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(14, 165, 233, 0.2)'">🔗 LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <p class="section-subtitle">Real results from B2B and SaaS companies I've worked with</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid #0ea5e9; border: 1px solid rgba(14, 165, 233, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.3rem;">S</div>
+                        <div>
+                            <h4 style="color: #ffffff; margin-bottom: 0.2rem;">Sarah (SaaS Founder)</h4>
+                            <div style="color: #0ea5e9; font-weight: 600; font-size: 0.9rem;">150+ qualified leads</div>
+                        </div>
+                    </div>
+                    <p style="color: #a0a0a0; font-style: italic; line-height: 1.7;">"Wisdom built a targeted lead list and executed a 5-email sequence. We got 150 qualified leads in 3 weeks. 8 of them became customers. Best investment we made for our SaaS product."</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid #06b6d4; border: 1px solid rgba(14, 165, 233, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.3rem;">M</div>
+                        <div>
+                            <h4 style="color: #ffffff; margin-bottom: 0.2rem;">Marcus (B2B Services)</h4>
+                            <div style="color: #0ea5e9; font-weight: 600; font-size: 0.9rem;">320 connections, 28% response</div>
+                        </div>
+                    </div>
+                    <p style="color: #a0a0a0; font-style: italic; line-height: 1.7;">"LinkedIn outreach campaign was incredible. 320 connections with a 28% response rate. We booked 12 demos in the first month. Wisdom knows exactly how to position B2B services."</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid #10b981; border: 1px solid rgba(14, 165, 233, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #fbbf24 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.3rem;">J</div>
+                        <div>
+                            <h4 style="color: #ffffff; margin-bottom: 0.2rem;">James (Enterprise SaaS)</h4>
+                            <div style="color: #0ea5e9; font-weight: 600; font-size: 0.9rem;">6 enterprise deals closed</div>
+                        </div>
+                    </div>
+                    <p style="color: #a0a0a0; font-style: italic; line-height: 1.7;">"Multi-channel campaign targeting C-suite executives. Wisdom's research and personalization were next level. We closed 6 enterprise deals worth $240K. ROI was 15x."</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); padding: 2rem; border-radius: 12px; border-left: 4px solid #fbbf24; border: 1px solid rgba(14, 165, 233, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.3rem;">A</div>
+                        <div>
+                            <h4 style="color: #ffffff; margin-bottom: 0.2rem;">Amara (B2B SaaS)</h4>
+                            <div style="color: #0ea5e9; font-weight: 600; font-size: 0.9rem;">40% email open rate</div>
+                        </div>
+                    </div>
+                    <p style="color: #a0a0a0; font-style: italic; line-height: 1.7;">"Cold email campaign with 40% open rate and 9% reply rate. Wisdom's sequences were personalized and relevant. We filled our pipeline for Q3 in just 4 weeks."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Wisdom. Lead Generation & Sales Development Specialist for B2B and SaaS. <a href="/" style="color: #0ea5e9; text-decoration: none;">Back to top</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
